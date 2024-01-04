@@ -6,11 +6,11 @@
 
 import http from "node:http"
 
-import * as debug_ from "debug"
+import debug from "debug"
 
 import app from "../app.js"
 
-const debug = debug_("message-board:server")
+const debug_ = debug("message-board:server")
 
 /**
  * Get port from environment and store in Express.
@@ -94,5 +94,5 @@ function onListening() {
   const addr = server.address()
   const bind = typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`
 
-  debug(`Listening on ${bind}`)
+  debug_(`Listening on ${bind}`)
 }
